@@ -1,0 +1,12 @@
+.external-css{
+    background-color: blue;
+    color: white;
+    padding: solid 7px;
+    display:inline-flex;
+    justify-self: center;
+}
+button{
+    padding: 15px;
+    margin: 30px;
+    border: solid 7px;
+}
