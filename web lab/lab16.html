@@ -1,0 +1,32 @@
+<!---js code using array-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Example</title>
+    <script>
+        // Function to calculate sum of array elements
+        function calculateSum() {
+            // Array of numbers
+            let numbers = [5, 10, 15, 20, 25];
+
+            // Calculate sum of array elements
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+            }
+
+            // Display the sum on the webpage
+            document.getElementById("result").innerHTML = "Sum of numbers: " + sum;
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", calculateSum);
+    </script>
+</head>
+<body>
+    <h1>JavaScript Array Example</h1>
+    <div id="result"></div>
+</body>
+</html>

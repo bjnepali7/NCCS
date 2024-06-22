@@ -1,0 +1,70 @@
+<!---js prgarm using diifn operators-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators Example</title>
+    <script>
+        // Function to demonstrate various operators
+        function demonstrateOperators() {
+            let result = ""; // Initialize a string to store the results
+
+            // Arithmetic Operators
+            let a = 10;
+            let b = 5;
+            result += "Arithmetic Operators:\n";
+            result += "a + b = " + (a + b) + "<br>";
+            result += "a - b = " + (a - b) + "<br>";
+            //result += "a * b = " + (a * b) + "<br>";
+            //result += "a / b = " + (a / b) + "<br>";
+            //result += "a % b = " + (a % b) + "<br>";
+            //result += "a ** b = " + (a ** b) + "<br><br>";
+
+            // Assignment Operators
+            let c = 10;
+            result += "Assignment Operators:\n";
+            result += "c = " + c + "<br>";
+            c += 5;
+            result += "c += 5 -> " + c + "<br>";
+           // c -= 3;
+           /* result += "c -= 3 -> " + c + "<br>";
+            c *= 2;
+            result += "c *= 2 -> " + c + "<br>";
+            c /= 4;
+            result += "c /= 4 -> " + c + "<br>";
+            c %= 3;
+            result += "c %= 3 -> " + c + "<br>";
+            c **= 2;
+            result += "c **= 2 -> " + c + "<br><br>";*/
+
+            // Comparison Operators
+            result += "Comparison Operators:\n";
+            result += "a == b: " + (a == b) + "<br>";
+            result += "a != b: " + (a != b) + "<br>";
+            /*result += "a > b: " + (a > b) + "<br>";
+            result += "a < b: " + (a < b) + "<br>";
+            result += "a >= b: " + (a >= b) + "<br>";
+            result += "a <= b: " + (a <= b) + "<br><br>";*/
+
+            // Logical Operators
+            let x = true;
+            let y = false;
+            result += "Logical Operators:\n";
+            result += "x && y: " + (x && y) + "<br>";
+            result += "x || y: " + (x || y) + "<br>";
+            result += "!x: " + (!x) + "<br>";
+
+            // Display the result on the webpage
+            document.getElementById("result").innerHTML = result.replace(/\n/g, "<br>");
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", demonstrateOperators);
+    </script>
+</head>
+<body>
+    <h1>JavaScript Operators Example</h1>
+    <div id="result"></div>
+</body>
+</html>

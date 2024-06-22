@@ -1,0 +1,49 @@
+<!--program on js using loops-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops Example</title>
+    <script>
+        // Function to demonstrate different types of loops
+        function demonstrateLoops() {
+            let result = ""; // Initialize a string to store the results
+
+            // For loop example
+            result += "For Loop Example:<br>";
+            for (let i = 1; i <= 5; i++) {
+                result += "Iteration " + i + "<br>";
+            }
+            result += "<br>";
+
+            // While loop example
+            result += "While Loop Example:<br>";
+            let j = 1;
+            while (j <= 5) {
+                result += "Iteration " + j + "<br>";
+                j++;
+            }
+            result += "<br>";
+
+            // Do-while loop example
+            result += "Do-While Loop Example:<br>";
+            let k = 1;
+            do {
+                result += "Iteration " + k + "<br>";
+                k++;
+            } while (k <= 5);
+
+            // Display the result on the webpage
+            document.getElementById("result").innerHTML = result;
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", demonstrateLoops);
+    </script>
+</head>
+<body>
+    <h1>JavaScript Loops Example</h1>
+    <div id="result"></div>
+</body>
+</html>

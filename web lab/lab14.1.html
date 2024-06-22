@@ -1,0 +1,57 @@
+<!----javascript program using assigmnt operator-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Operators Example</title>
+    <script>
+        
+        function demonstrateAssignmentOperators() {
+            let result = ""; 
+
+            let a = 10;
+            result += "Initial value of a: " + a + "<br>";
+
+            // Assignment operator
+            a = 20;
+            result += "After a = 20: " + a + "<br>";
+
+            // Addition assignment operator
+            a += 5;
+            result += "After a += 5: " + a + "<br>";
+
+            // Subtraction assignment operator
+            a -= 3;
+            result += "After a -= 3: " + a + "<br>";
+
+            // Multiplication assignment operator
+            a *= 2;
+            result += "After a *= 2: " + a + "<br>";
+
+            // Division assignment operator
+            a /= 4;
+            result += "After a /= 4: " + a + "<br>";
+
+            // Modulus assignment operator
+            a %= 3;
+            result += "After a %= 3: " + a + "<br>";
+
+            // Exponentiation assignment operator
+            a **= 2;
+            result += "After a **= 2: " + a + "<br>";
+
+            // Display the result on the webpage
+            document.getElementById("result").innerHTML = result;
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", demonstrateAssignmentOperators);
+    </script>
+</head>
+<body>
+    <h1>Assignment Operators Example</h1>
+    <div id="result"></div>
+</body>
+</html>

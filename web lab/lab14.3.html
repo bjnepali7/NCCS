@@ -1,0 +1,42 @@
+<!---javascript popup function-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Popup Functions</title>
+    <script>
+        // Function to display an alert popup
+        function showAlert() {
+            alert("This is an alert message !");
+        }
+
+        // Function to display a prompt popup and show the input
+        function showPrompt() {
+            var userInput = prompt("Please enter your name:");
+            if (userInput !== null) {
+                document.getElementById("promptResult").innerText = "Hello, " + userInput + "!";
+            }
+        }
+
+        // Function to display a confirm popup and show the result
+        function showConfirm() {
+            var userConfirmed = confirm("Do you want to proceed?");
+            if (userConfirmed) {
+                document.getElementById("confirmResult").innerText = "You chose to proceed.";
+            } else {
+                document.getElementById("confirmResult").innerText = "You chose to cancel.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Popup Functions</h1>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+    <button onclick="showConfirm()">Show Confirm</button>
+
+    <p id="promptResult"></p>
+    <p id="confirmResult"></p>
+</body>
+</html>

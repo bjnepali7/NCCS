@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        // Function to validate the form
+        function validateForm() {
+            let isValid = true; // Flag to track overall form validity
+
+            // Retrieve form inputs
+            let name = document.forms["registrationForm"]["name"].value.trim();
+            let email = document.forms["registrationForm"]["email"].value.trim();
+            let phone = document.forms["registrationForm"]["phone"].value.trim();
+            let dob = document.forms["registrationForm"]["dob"].value.trim();
+
+            // Validate name (required field)
+            isValid = isValid && !!name; // Double negation to convert to boolean
+
+            // Validate email (required and format)
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isValid = isValid && !!email && emailRegex.test(email);
+
+            // Validate phone (required and format)
+            let phoneRegex = /^\d{10}$/;
+            isValid = isValid && !!phone && phoneRegex.test(phone);
+
+            // Validate date of birth (required)
+            isValid = isValid && !!dob;
+
+            // Show error message if form is not valid
+            document.getElementById("error").innerHTML = isValid ? "" : "Please fill out all fields correctly.";
+
+            // Return form validity
+            return isValid;
+        }
+    </script>
+</head>
+<body>
+    <h1>Employee Registration Form</h1>
+    <form name="registrationForm" onsubmit="return validateForm()" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div id="error" class="error"></div>
+</body>
+</html>

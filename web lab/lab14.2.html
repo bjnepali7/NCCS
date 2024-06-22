@@ -1,0 +1,23 @@
+<!---display fulll name using variable decleration-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Full Name</title>
+    <script>
+        // JavaScript function to display the full name
+        function displayFullName() {
+            var fullName = "Bijay Nepali"; // Replace with your actual full name
+            document.getElementById("nameDisplay").innerText = fullName;
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", displayFullName);
+    </script>
+</head>
+<body>
+    <h1>Welcome to My Page</h1>
+    <p id="nameDisplay"></p>
+</body>
+</html>

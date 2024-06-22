@@ -1,0 +1,51 @@
+<!---js program for diifnt method of string-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Methods Example</title>
+    <script>
+        // Function to demonstrate string methods
+        function demonstrateStringMethods() {
+            let str = "Hello, alison!";
+
+            // Display the original string
+            let result = "Original string: " + str + "<br><br>";
+
+            // String length
+            result += "Length of the string: " + str.length + "<br><br>";
+
+            // Concatenation
+            let additionalStr = " Have a nice day!";
+            result += "Concatenated string: " + str.concat(additionalStr) + "<br><br>";
+
+            // Substring extraction
+            let substring = str.substring(7, 18); // Extracts characters from index 7 to 17 (end index is exclusive)
+            result += "Substring from index 7 to 17: " + substring + "<br><br>";
+
+            // Converting case
+            result += "Uppercase: " + str.toUpperCase() + "<br>";
+            result += "Lowercase: " + str.toLowerCase() + "<br><br>";
+
+            /*// Finding substrings
+            let searchTerm = "JavaScript";
+            if (str.includes(searchTerm)) {
+                result += "'" + searchTerm + "' found in the string.<br>";
+            } else {
+                result += "'" + searchTerm + "' not found in the string.<br>";
+            }*/
+
+            // Display the result on the webpage
+            document.getElementById("result").innerHTML = result;
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", demonstrateStringMethods);
+    </script>
+</head>
+<body>
+    <h1>JavaScript String Methods Example</h1>
+    <div id="result"></div>
+</body>
+</html>

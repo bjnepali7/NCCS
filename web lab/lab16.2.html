@@ -1,0 +1,39 @@
+<!--js code using date object-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date Object Example</title>
+    <script>
+        // Function to demonstrate Date object
+        function demonstrateDateObject() {
+            // Create a new Date object representing the current date and time
+            let currentDate = new Date();
+
+            // Display various date and time components
+            let result = "Current Date and Time:<br>";
+            result += "Full date string: " + currentDate.toString() + "<br>";
+            result += "Date: " + currentDate.getDate() + "<br>"; // Day of the month (1-31)
+            result += "Month: " + (currentDate.getMonth() + 1) + "<br>"; // Month (0-11, hence +1)
+            result += "Year: " + currentDate.getFullYear() + "<br>"; // Full year (YYYY)
+            result += "Day: " + currentDate.getDay() + "<br>"; // Day of the week (0-6, 0 = Sunday)
+            result += "Hours: " + currentDate.getHours() + "<br>"; // Hours (0-23)
+            result += "Minutes: " + currentDate.getMinutes() + "<br>"; // Minutes (0-59)
+            //result += "Seconds: " + currentDate.getSeconds() + "<br>"; // Seconds (0-59)
+          //  result += "Milliseconds: " + currentDate.getMilliseconds() + "<br>"; // Milliseconds (0-999)
+            result += "Timezone Offset: " + currentDate.getTimezoneOffset() + " minutes<br>"; // Timezone offset in minutes
+
+            // Display the result on the webpage
+            document.getElementById("result").innerHTML = result;
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", demonstrateDateObject);
+    </script>
+</head>
+<body>
+    <h1>JavaScript Date Object Example</h1>
+    <div id="result"></div>
+</body>
+</html>

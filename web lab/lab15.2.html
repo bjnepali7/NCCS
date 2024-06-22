@@ -1,0 +1,51 @@
+<!---js program for conditional satement-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditional Statements Example</title>
+    <script>
+        // Function to demonstrate conditional statements
+        function demonstrateConditionalStatements() {
+            let result = ""; // Initialize a string to store the results
+
+            // Example 1: if-else statement
+            let age = 20;
+            result += " if-else statement<br>";
+            if (age >= 18) {
+                result += "You are an adult.<br>";
+            } else {
+                result += "You are a minor.<br>";
+            }
+            result += "<br>";
+
+            // Example 2: if-else if-else statement
+            let marks = 75;
+            result += "if-else if-else statement<br>";
+            if (marks >= 90) {
+                result += "Excellent!<br>";
+            } else if (marks >= 60) {
+                result += "Good.<br>";
+            } else if (marks >= 40) {
+                result += "Pass.<br>";
+            } else {
+                result += "Fail.<br>";
+            }
+            result += "<br>";
+
+           
+
+            // Display the result on the webpage
+            document.getElementById("result").innerHTML = result;
+        }
+
+        // Call the function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", demonstrateConditionalStatements);
+    </script>
+</head>
+<body>
+    <h1>JavaScript Conditional Statements Example</h1>
+    <div id="result"></div>
+</body>
+</html>
