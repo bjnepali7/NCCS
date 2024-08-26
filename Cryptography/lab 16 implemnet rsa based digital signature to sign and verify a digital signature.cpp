@@ -1,7 +1,5 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
-#include <random>
 
 using namespace std;
 
@@ -54,17 +52,10 @@ ull modInverse(ull a, ull m) {
     return x1;
 }
 
-// Function to generate RSA key pair
-void generateRSAKeys(ull &n, ull &e, ull &d) {
-    // Select two prime numbers p and q
-    ull p = 61; // Example prime
-    ull q = 53; // Example prime
-
+// Function to generate RSA keys
+void generateRSAKeys(ull p, ull q, ull e, ull &n, ull &d) {
     n = p * q;
     ull phi = (p - 1) * (q - 1);
-
-    // Select public key exponent e
-    e = 17; // Example exponent
 
     // Compute private key exponent d
     d = modInverse(e, phi);
@@ -81,17 +72,31 @@ bool verifySignature(ull signature, ull message, ull e, ull n) {
 }
 
 int main() {
-    ull n, e, d;
-    generateRSAKeys(n, e, d);
+    ull p, q, e, message;
+
+    // Input primes p and q
+    cout << "Enter two prime numbers (p and q): ";
+    cin >> p >> q;
+
+    // Input public key exponent e
+    cout << "Enter the public key exponent (e): ";
+    cin >> e;
+
+    ull n, d;
+    generateRSAKeys(p, q, e, n, d);
 
     cout << "Public key (n, e): (" << n << ", " << e << ")" << endl;
     cout << "Private key (d): " << d << endl;
 
-    ull message = 42; // Example message
+    // Input message
+    cout << "Enter a message to sign: ";
+    cin >> message;
+
     ull signature = signMessage(message, d, n);
 
     cout << "Signature: " << signature << endl;
 
+    // Verify the signature
     if (verifySignature(signature, message, e, n)) {
         cout << "Signature verification succeeded." << endl;
     } else {
@@ -100,4 +105,3 @@ int main() {
 
     return 0;
 }
-
