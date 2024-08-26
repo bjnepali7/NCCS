@@ -1,18 +1,7 @@
 #include <iostream>
-#include <random>
 #include <cmath>
-#include <string>
-#include <vector>
 
 using namespace std;
-
-// Example prime and base (normally should be large and randomly generated)
-const long long P = 0xFFFFFFC5; // A large prime
-const long long Q = 0xFFFFFFF7; // A large prime factor of P-1
-const long long G = 2; // Base
-
-// Example private key
-const long long X = 123456789; // Private key (should be securely generated)
 
 // Function to compute modular exponentiation (base^exp % mod)
 long long modExp(long long base, long long exp, long long mod) {
@@ -29,19 +18,15 @@ long long modExp(long long base, long long exp, long long mod) {
 }
 
 // Generate the signature
-pair<long long, long long> signMessage(const string &message, long long privateKey) {
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<long long> dis(1, Q - 1);
-    
-    // Hash the message (using a simple hash function for demonstration)
+pair<long long, long long> signMessage(const string &message, long long privateKey, long long P, long long Q, long long G) {
+    // Simple hash function for demonstration (not secure for real use)
     long long H = 0;
     for (char c : message) {
         H = (H * 31 + c) % Q;
     }
 
     // Generate random k
-    long long k = dis(gen);
+    long long k = rand() % (Q - 1) + 1;
 
     // Compute r and s
     long long r = modExp(G, k, P) % Q;
@@ -52,7 +37,7 @@ pair<long long, long long> signMessage(const string &message, long long privateK
 }
 
 // Verify the signature
-bool verifySignature(const string &message, long long r, long long s, long long publicKey) {
+bool verifySignature(const string &message, long long r, long long s, long long publicKey, long long P, long long Q, long long G) {
     // Hash the message
     long long H = 0;
     for (char c : message) {
@@ -73,19 +58,33 @@ bool verifySignature(const string &message, long long r, long long s, long long 
 }
 
 int main() {
+    long long P, Q, G, X;
+
+    // Input P, Q, G, and private key X
+    cout << "Enter a large prime number P: ";
+    cin >> P;
+    cout << "Enter a large prime number Q (Q < P): ";
+    cin >> Q;
+    cout << "Enter a base G: ";
+    cin >> G;
+    cout << "Enter the private key X: ";
+    cin >> X;
+
     // Generate public key Y
     long long Y = modExp(G, X, P);
 
-    string message = "This is a test message.";
+    string message;
+    cout << "Enter a message to sign: ";
+    cin.ignore(); // Ignore the newline character from previous input
+    getline(cin, message);
 
     // Sign the message
-    auto [r, s] = signMessage(message, X);
+    auto [r, s] = signMessage(message, X, P, Q, G);
     cout << "Signature (r, s): " << r << ", " << s << endl;
 
     // Verify the signature
-    bool isValid = verifySignature(message, r, s, Y);
+    bool isValid = verifySignature(message, r, s, Y, P, Q, G);
     cout << (isValid ? "Signature verification succeeded.\n" : "Signature verification failed.\n");
 
     return 0;
 }
-
