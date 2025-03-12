@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Client-Side State Management";
+}
+
+<h2>Client-Side State Management</h2>
+
+@if (ViewBag.Message != null)
+{
+    <p><strong style="color: green;">@ViewBag.Message</strong></p>
+}
+
+<!-- Set & Get Cookies -->
+<a asp-controller="State" asp-action="SetCookie">Set Cookie</a> |
+<a asp-controller="State" asp-action="GetCookie">Get Cookie</a>
+
+<!-- Query String Example -->
+<br>
+<a href="@Url.Action("QueryStringExample", "State", new { name = "Bijay", age = 60 })">
+    Send Data Using Query String
+</a>
+
+<!-- Hidden Field Example -->
+<form method="post" asp-action="SubmitHidden">
+    <input type="hidden" name="HiddenData" value="SecretValue123" />
+    <button type="submit">Submit Hidden Data</button>
+</form>
